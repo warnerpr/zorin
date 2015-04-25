@@ -41,14 +41,9 @@ class Site(object):
             operators=len(self.operators), visitors=len(self.visitors))
 
 def main():
-  fname = sys.argv[1]
-
-  iterations = []
-
-  for iter in range(0,15): 
+    fname = sys.argv[1]
 
     sites = {}
-    iterations.append(sites)
     
     with open(fname) as f:
        for line in f.readlines():
@@ -67,11 +62,8 @@ def main():
             if data['type'] == 'message':
                 site.add_chat(int(data['timestamp']), intern(str(data['from'])))
 
-#    for site_id, site in sorted(sites.items(), key=lambda _e: _e[0]):
-#       site.report(site_id)
-  raw_input("Press Enter to continue...")
-
-  print iterations
+    for site_id, site in sorted(sites.items(), key=lambda _e: _e[0]):
+       site.report(site_id)
 
 if __name__ == '__main__':
     main()
