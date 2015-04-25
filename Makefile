@@ -21,5 +21,5 @@ test-small:
 	@diff /tmp/small_output sample-data/backend-python-homework/small_output
 
 test-big:
-	@time ./venv/bin/python zorin/report.py sample-data/backend-python-homework/big_input > /tmp/big_output
+	@./venv/bin/python zorin/report.py sample-data/backend-python-homework/big_input > /tmp/big_output
 	@diff /tmp/big_output sample-data/backend-python-homework/big_output
