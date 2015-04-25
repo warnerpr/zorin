@@ -4,7 +4,7 @@ import json
 from ZODB import FileStorage, DB
 from persistent.mapping import PersistentMapping
 import transaction
-storage = FileStorage.FileStorage('/tmp/zreport.db')
+storage = FileStorage.FileStorage('/tmp/zreport2.db')
 db = DB(storage)
 connection = db.open()
 root = connection.root()
@@ -46,9 +46,7 @@ class Site(object):
 
         visitors = root['visitors']
 	with transaction.manager:
-            if site_id not in visitors:
-                visitors[site_id] = set()
-            visitors[site_id].add(visitor)
+            visitors.setdefault(site_id, PersistentMapping())[visitor] = None  # no persisted set
 
     def report(self, site_id):
         visitors = root['visitors'][site_id]
