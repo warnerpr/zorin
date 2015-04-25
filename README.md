@@ -39,3 +39,11 @@ Thought process:
  - takes about 20 - 25 seconds to run on large file
  - 350 MB RAM so probably 10M lines will max out past 2GB, so we can't do this in RAM
  - let's move it to a DB, but time is short to let's just use sqlite
+
+**Update 3:**
+
+ - 5 hours in, took a while to get sqlalchemy going, had not used it in many years
+ - wow, sqlalchemy + sqlite = insane slow.  20 second execution time is now 6 minutes
+ - I don't want to leave it here at all, but I need to put it aside for today possibly.
+ - Unsure if I should just get this working the rest of the way with current DB choices or pursue something better?  For sure if this was going into production I would not proceed with current performance, it is too slow.  
+ - I wonder if the way I used the DB is just totally wrong or it is just that slow...
