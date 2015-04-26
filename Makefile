@@ -6,6 +6,8 @@ sample-data/backend-python-homework.tar.gz: sample-data
 
 sample-data/backend-python-homework/small_input: sample-data/backend-python-homework.tar.gz
 	@tar zxvf sample-data/backend-python-homework.tar.gz --directory sample-data
+	@cd sample-data/backend-python-homework && gunzip big_output.gz 
+	@cd sample-data/backend-python-homework && gunzip big_input.gz
 
 get-sample-data: sample-data/backend-python-homework/small_input
 
