@@ -12,7 +12,7 @@ test:
 
 ```
 make test-small
-make
+make test-big
 ```
 
 run it:
@@ -47,3 +47,9 @@ Thought process:
  - I don't want to leave it here at all, but I need to put it aside for today possibly.
  - Unsure if I should just get this working the rest of the way with current DB choices or pursue something better?  For sure if this was going into production I would not proceed with current performance, it is too slow.  
  - I wonder if the way I used the DB is just totally wrong or it is just that slow...
+
+**Update 4:**
+ 
+ - spent another hour (6 total) trying ZODB, which is even slower than sqlalchemy, so forget that
+ - also tried getting the in memory version down on RAM, but I think 10M entries will still be 2.1 GB, so will fail the criteria.
+ - Conclusion from my end is that I need to think a bit more about what DB to use.
